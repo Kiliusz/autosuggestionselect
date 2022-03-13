@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AutosuggestionSelect from './components/AutosuggestionSelect/AutoSuggestionSelect';
+
+const ENDPOINT = 'http://universities.hipolabs.com/search?name=';
 
 function App() {
+  const [selectedData, setSelectedData] = useState<any>();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div style={{ display: 'flex', alignContent: 'start' }} className="App">
+      <div style={{ padding: '1rem' }}>
+        <AutosuggestionSelect
+          title="Universities"
+          onItemSelect={(item, array) => setSelectedData({ item, array })}
+          endpoint={ENDPOINT}
+          propertyKey="name"
+        />
+      </div>
+
+      <div style={{ padding: '1rem', margin: '0 auto' }}>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          <strong>Last selected item:</strong>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {selectedData && selectedData.item}
+        <br />
+        <p>
+          <strong>Array of selected items:</strong>
+        </p>
+        <pre>{selectedData && JSON.stringify(selectedData.array, null, 2)}</pre>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,111 @@
+.titleWrapper {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem;
+  border: 2px solid black;
+}
+.titleHeader {
+  display: inline;
+}
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.selectWrapper {
+  animation: appearing 0.2s ease-in-out;
+  margin-top: -2px;
+  background-color: white;
+  width: 90vw;
+  border: 2px solid black;
+  position: absolute;
+  z-index: 44;
+}
+
+@media screen and (min-width: 600px) {
+  .selectWrapper {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 900px) {
+  .selectWrapper {
+    width: 40vw;
+  }
+}
+
+.inputContainer {
+  padding: 0 0.5rem;
+}
+
+.inputField {
+  box-sizing: border-box;
+  padding: 0.7rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0.6rem 0;
+}
+
+.optionsContainer {
+  animation: appearing 0.2s ease-in-out;
+  cursor: pointer;
+  max-height: 40vh;
+  overflow: auto;
+}
+
+.optionItem {
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid #cacaca;
+}
+
+.optionItem:hover {
+  background-color: #b8b8b8;
+}
+
+.optionSelected {
+  font-weight: 500;
+}
+
+.optionSelected:after {
+  content: '\2713';
+  display: inline-block;
+  padding-left: 1rem;
+}
+
+.counter {
+  color: #fafafa;
+  background-color: black;
+  padding: 0.2rem;
+}
+
+select {
+  outline: none;
+  -webkit-appearance: none;
+}
+
+select:focus {
+  -webkit-appearance: none;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+.loading {
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.resetButton {
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem;
+  width: 100%;
+  display: block;
+  color: #fafafa;
+  background-color: black;
+}
