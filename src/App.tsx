@@ -16,6 +16,9 @@ function App() {
         />
       </div>
 
+      {/* This is made for the preview of functioning component 
+      instead of console log  */}
+
       <div style={{ padding: '1rem', margin: '0 auto' }}>
         <p>
           <strong>Last selected item:</strong>
