@@ -72,6 +72,10 @@ const AutosuggestionSelect: React.FC<AutoSuggestionSelectProps> = ({
         setLoading(false);
         const mappedData = data.map((item: any) => item[propertyKeyArg]);
         setRawOptions(mappedData);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setRawOptions(["Can't load data, try again later"]);
       });
   };
 
