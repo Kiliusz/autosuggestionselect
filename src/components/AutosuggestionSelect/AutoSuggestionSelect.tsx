@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './AutosuggestionSelect.module.css';
 
+//For the purpose of the task i put all the code in here,
+//to make it just one simple component to use
+
 type OptionsArray = (string | number)[];
 
 interface AutoSuggestionSelectProps {
